@@ -2,6 +2,9 @@
 #ifndef AUX_TYPES_H
 #define AUX_TYPES_H
 
+/* Propagate boolean type */
+#include <stdbool.h>
+
 #include <stdint.h>
 
 /* Integral types */
