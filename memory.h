@@ -13,6 +13,6 @@
 	(((word) (size) + (word) (alignment) - WORD_C(1)) & ~((word) (alignment) - WORD_C(1)))
 
 #define alloc(size) \
-	mmap((void *) 0, (size), PROT_READ | PROT_WRITE, MAP_ANON, -1, 0)
+	mmap((void *) 0, (size), PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANON, -1, 0)
 
 #endif
