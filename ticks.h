@@ -26,6 +26,11 @@ static word ticks() {
 	/* Read time base */
 	__asm__ volatile ("mftb %0" : "=r" (cnt));
 
+/* MIPS */
+#elif defined(__mips__)
+	/* Read cycle counter from co-processor register */
+	__asm__ volatile ("mfc0 %0, $9" : "=r" (cnt));
+
 /* PA-RISC */
 #elif defined(__hppa__)
 	/* Read interval timer from control register */
