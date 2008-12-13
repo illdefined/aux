@@ -31,6 +31,11 @@ static word ticks() {
 	/* Read cycle counter from co-processor register */
 	__asm__ volatile ("mfc0 %0, $9" : "=r" (cnt));
 
+/* ARM */
+#elif defined(__arm__)
+	/* Read cycle counter register from co-processor */
+	__asm__ volatile ("mrc p15, 0, %0, c15, c12, 1" : "=r" (cnt));
+
 /* PA-RISC */
 #elif defined(__hppa__)
 	/* Read interval timer from control register */
