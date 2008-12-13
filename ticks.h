@@ -46,6 +46,11 @@ static word ticks() {
 	/* Read time counter */
 	__asm__ volatile ("mov %0 = ar.itc" : "=r" (cnt));
 
+/* System/390 */
+#elif defined(__s390__)
+	/* Store clock */
+	__asm__ volatile ("stck 0(%1)" : "=m" (cnt) : "a" (&cnt) : "cc");
+
 /* Generic architecture-independent mechanism */
 #else
 #warning "No hardware tick counter available!"
