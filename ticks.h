@@ -6,6 +6,14 @@
 
 #include "types.h"
 
+/**
+ * Read hardware tick counter.
+ * The hardware tick counter is read in a architecture-dependent fashion and
+ * offers a high-resolution clock for short intervals, that is not guarenteed
+ * to be synchronised between processors.
+ *
+ * \return tick count
+ */
 static word ticks() {
 	register word cnt;
 
