@@ -12,7 +12,7 @@
  * offers a high-resolution clock for short intervals, that is not guarenteed
  * to be synchronised between processors.
  *
- * \return tick count
+ * @return tick count
  */
 static word ticks() {
 	register word cnt;

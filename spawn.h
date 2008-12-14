@@ -10,9 +10,9 @@
 /**
  * Spawn process.
  *
- * \param file program file
- * \param argv command line arguments
- * \return PID of the new process or -1 on failure
+ * @param file program file
+ * @param argv command line arguments
+ * @return PID of the new process or -1 on failure
  */
 static pid_t spawn(const char *file, char *const argv[]) {
 	pid_t pid = fork();
@@ -31,10 +31,10 @@ static pid_t spawn(const char *file, char *const argv[]) {
 /**
  * Spawn process, capturing its input and output.
  *
- * \param file program file
- * \param argv command line arguments
- * \param sock pointer to an integer array to store socket descriptors
- * \return PID of the new process or -1 on failure
+ * @param file program file
+ * @param argv command line arguments
+ * @param sock pointer to an integer array to store socket descriptors
+ * @return PID of the new process or -1 on failure
  */
 static pid_t pspawn(const char *file, char *const argv[], int *sock) {
 	int pair[2];

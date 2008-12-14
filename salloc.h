@@ -7,8 +7,8 @@
 /**
  * Allocate memory using alloc().
  *
- * \param len size
- * \return pointer to the memory or MAP_FAILED on error
+ * @param len size
+ * @return pointer to the memory or MAP_FAILED on error
  */
 static void *salloc(word len) {
 	word *ptr = alloc(len += sizeof (word));
@@ -22,8 +22,8 @@ static void *salloc(word len) {
 /**
  * Free memory allocated by salloc().
  *
- * \param ptr pointer to the memory
- * \return true on success or false on failure
+ * @param ptr pointer to the memory
+ * @return true on success or false on failure
  */
 static bool sfree(void *ptr) {
 	word *mem = ptr;
